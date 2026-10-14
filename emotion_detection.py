@@ -10,10 +10,12 @@ def emotion_detector(text_to_analyze):
     obj = { "raw_document": { "text": text_to_analyze } }
     # request
     response = requests.post(url, json=obj, headers=headers)
+    #response
+    response = requests.post(url, json=obj, headers=headers)
     #change response to JSON
     formatted_response = json.loads(response.text)
     #making  a list of emotion
-    emotions = formatted_response['emotionPrediction'][0]['emotion']
+    emotions = formatted_response['emotionPredictions'][0]['emotion']
     #taking the most probable emotion
     dominant_emotion = max(emotions, key=emotions.get)
     #emotions score
