@@ -7,7 +7,7 @@ def render_index_page():
     return render_template("index.html")
 
 @app.route("/emotionDetector")
-def emotion_detector():
+def emo_detector():
     text_to_analyze = request.args.get('textToAnalyze')
     #emotion_detector calling & dictionary results
     response = emotion_detector(text_to_analyze)
