@@ -1,4 +1,5 @@
 import requests
+import json
 
 def emotion_detector(text_to_analyze):
     #URL watson
@@ -9,5 +10,10 @@ def emotion_detector(text_to_analyze):
     obj = { "raw_document": { "text": text_to_analyze } }
     # request
     response = requests.post(url, json=obj, headers=headers)
+    #change response to JSON
+    formatted_response = json.loads(response.text)
+    #extraction emotion label & score
+    label = formatted_response['dominant_emotion']['label']
+    score = formatted_response['dominant_emotion']['score']
     #response
     return response.text
