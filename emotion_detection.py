@@ -1,4 +1,4 @@
-import request
+import requests
 
 def emotion_detector(text_to_analyze):
     #URL watson
@@ -8,6 +8,6 @@ def emotion_detector(text_to_analyze):
     #text fomrat for Watson
     obj: { "raw_document": { "text": text_to_analyze } }
     # request
-    response = request.post(url, json=obj, headers=headers)
+    response = requests.post(url, json=obj, headers=headers)
     #response
     return response.text
