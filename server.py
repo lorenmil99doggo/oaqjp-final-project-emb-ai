@@ -12,6 +12,9 @@ def emot_detector():
     #emotion_detector calling & dictionary results
     response = emotion_detector(text_to_analyze)
     #analysis
+    if response['dominant_emotion'] is None:
+        return "Invalid text! Please try again!"
+    #error handling
     return (
         f"'anger': {response['anger']},"
         f"'disgust': {response['disgust']},"
