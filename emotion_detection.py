@@ -19,6 +19,6 @@ def emotion_detector(text_to_analyze):
     #taking the most probable emotion
     dominant_emotion = max(emotions, key=emotions.get)
     #emotions score
-    final_emotions['dominant_emotion'] = dominant_emotion
+    emotions['dominant_emotion'] = dominant_emotion
     #response
-    return final_emotions
+    return emotions
