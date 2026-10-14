@@ -2,16 +2,6 @@ import requests
 import json
 
 def emotion_detector(text_to_analyze):
-    #no text error
-    if not text_to_analyze or text_to_analyze.strip() == "":
-        return {
-            'anger': None,
-            'disgust': None,
-            'fear': None,
-            'joy': None,
-            'sadness': None,
-            'dominant_emotion': None
-        }
     #URL watson
     url = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
     #What NLP model to use
